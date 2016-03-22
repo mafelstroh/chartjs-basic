@@ -1,19 +1,8 @@
-import Chart from 'chart.js';
+import Vue from 'vue';
+import Graph from './components/Graph';
 
-var data = {
-    labels: ['January', 'February', 'March'],
+new Vue({
+    el: 'body',
 
-    datasets: [{
-        fillcolor: "rgba(220, 220, 220, 0.2)",
-        strokeCOlor: "rgba(220, 220, 220, 0.1)",
-        pointColor: "rgba(220, 220, 220, 1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220, 220, 220, 1)",
-        data: [30, 122, 90]
-    }]
-};
-
-var context = document.querySelector('#graph').getContext('2d');
-
-new Chart(context).Line(data);
+    components: { Graph }
+});

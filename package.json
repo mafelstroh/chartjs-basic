@@ -6,6 +6,7 @@
   "dependencies": {
     "bootstrap-sass": "^3.0.0",
     "chart.js": "^1.0.2",
-    "laravel-elixir": "^4.0.0"
+    "laravel-elixir": "^4.0.0",
+    "vue": "^1.0.18"
   }
 }

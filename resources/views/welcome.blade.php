@@ -5,7 +5,7 @@
     </head>
     <body>
         <div class="container">
-            <canvas width="600" height="400" id="graph"></canvas>
+            <graph></graph>
         </div>
 
         <script src="/js/main.js"></script>
