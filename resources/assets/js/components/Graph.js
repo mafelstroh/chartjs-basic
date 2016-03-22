@@ -1,9 +1,17 @@
 import Chart from 'chart.js';
 
 export default {
-    template: '<canvas width="600" height="400" id="graph"></canvas>',
+    template: '<canvas width="600" height="400"></canvas>',
 
     props: ['labels', 'values', 'color'], 
+
+    props: {
+        labels: {}, 
+        values: {}, 
+        color: {
+            default: 'rgba(220,220,220,0.2)'
+        }
+    },
 
     ready() {
         var data = {
@@ -19,9 +27,8 @@ export default {
                 data: this.values
             }]
         };
-
-        var context = document.querySelector('#graph').getContext('2d');
-
-        new Chart(context).Line(data);
+        new Chart(
+            this.$el.getContext('2d')
+        ).Line(data);
     }
 }

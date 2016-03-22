@@ -13282,37 +13282,43 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _template$props$props;
+
 var _chart = require('chart.js');
 
 var _chart2 = _interopRequireDefault(_chart);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = {
-    template: '<canvas width="600" height="400" id="graph"></canvas>',
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-    props: ['labels', 'values', 'color'],
+exports.default = (_template$props$props = {
+    template: '<canvas width="600" height="400"></canvas>',
 
-    ready: function ready() {
-        var data = {
-            labels: this.labels,
+    props: ['labels', 'values', 'color']
 
-            datasets: [{
-                fillColor: this.color,
-                strokeColor: "rgba(220, 220, 220, 0.1)",
-                pointColor: "rgba(220, 220, 220, 1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220, 220, 220, 1)",
-                data: this.values
-            }]
-        };
-
-        var context = document.querySelector('#graph').getContext('2d');
-
-        new _chart2.default(context).Line(data);
+}, _defineProperty(_template$props$props, 'props', {
+    labels: {},
+    values: {},
+    color: {
+        default: 'rgba(220,220,220,0.2)'
     }
-};
+}), _defineProperty(_template$props$props, 'ready', function ready() {
+    var data = {
+        labels: this.labels,
+
+        datasets: [{
+            fillColor: this.color,
+            strokeColor: "rgba(220, 220, 220, 0.1)",
+            pointColor: "rgba(220, 220, 220, 1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220, 220, 220, 1)",
+            data: this.values
+        }]
+    };
+    new _chart2.default(this.$el.getContext('2d')).Line(data);
+}), _template$props$props);
 
 },{"chart.js":1}],5:[function(require,module,exports){
 'use strict';

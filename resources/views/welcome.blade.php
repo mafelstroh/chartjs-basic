@@ -7,7 +7,13 @@
         <div class="container">
             <graph :labels="['January', 'February', 'March']" 
                    :values="[10, 42, 4]"
-                   color="blue"
+            ></graph>
+        </div>
+
+        <div class="container">
+            <graph :labels="['April', 'May', 'June']" 
+                   :values="[800, 450, 12]"
+                   color="red"
             ></graph>
         </div>
 
